@@ -16,7 +16,7 @@ def login():
     if request.method=="POST":
         email = request.json["email"]
         password = request.json["password"]
-        query = query_db("SELECT password FROM admin where email=%s", (email, ))
+        query = query_db("SELECT password FROM startup where email=%s", (email, ))
         if query is None:
             return jsonify(status=False)
         else:
