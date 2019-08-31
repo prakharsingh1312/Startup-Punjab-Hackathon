@@ -14,7 +14,6 @@ from passlib.hash import bcrypt
 
 main = Blueprint('main', __name__)
 
-
 @main.route('/', methods=["GET","POST"])
 @login_required
 def index():

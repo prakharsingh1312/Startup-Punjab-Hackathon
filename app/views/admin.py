@@ -35,5 +35,19 @@ def logout():
     return redirect(url_for("admin.login"))
 
 @admin.route('/', methods=["GET", "POST"])
+@admin_required
 def index():
+    announcements = query_db("SELECT * FROM announcements")
     return render_template("dashboard.html", **locals())
+
+@admin.route('/add_announment', methods=["GET", "POST"])
+@admin_required
+def add_announment():
+    announcements = query_db("SELECT * FROM announcements")
+    if request.method=="POST":
+        title = request.form["title"]
+        content = request.form["content"]
+        execute_db("INSERT INTO announcements(title, content) values(%s, %s);", (title, content, ))
+        flash("Announcement Added Successfully", "success")
+        return redirect(url_for('admin.index'))
+    return render_template("admin/add_announcement.html", **locals())
