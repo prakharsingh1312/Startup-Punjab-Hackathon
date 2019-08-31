@@ -12,3 +12,7 @@
 127.0.0.1 - - [31/Aug/2019 07:06:23] "GET /maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css HTTP/1.1" 404 -
 127.0.0.1 - - [31/Aug/2019 07:06:23] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
 127.0.0.1 - - [31/Aug/2019 07:06:24] "GET /img/favicon.png HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2019 09:10:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2019 09:10:59] "GET /maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 09:10:59] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 09:11:00] "GET /img/favicon.png HTTP/1.1" 200 -
