@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 31, 2019 at 09:29 PM
+-- Generation Time: Aug 31, 2019 at 10:35 PM
 -- Server version: 5.7.27-0ubuntu0.18.04.1
 -- PHP Version: 7.2.19-0ubuntu0.18.04.2
 
@@ -19,6 +19,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `startup_punjab`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `email` longtext NOT NULL,
+  `password` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `email`, `password`) VALUES
+(1, 'divyaprakashmittal@gmail.com', '$2a$08$FGAjwqc3mPlilLXrIZ7fU..yU4eeH/OyjeZetEKJD0xfJmve3dg1y');
 
 -- --------------------------------------------------------
 
@@ -1046,6 +1065,12 @@ INSERT INTO `startups` (`id`, `logo`, `name`, `brief`, `stage_id`, `c_id`, `fund
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `announcements`
 --
 ALTER TABLE `announcements`
@@ -1102,6 +1127,11 @@ ALTER TABLE `startups`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `announcements`
 --
