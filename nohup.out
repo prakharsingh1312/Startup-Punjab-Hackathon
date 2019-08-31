@@ -12,3 +12,89 @@
 127.0.0.1 - - [31/Aug/2019 07:06:23] "GET /maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css HTTP/1.1" 404 -
 127.0.0.1 - - [31/Aug/2019 07:06:23] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
 127.0.0.1 - - [31/Aug/2019 07:06:24] "GET /img/favicon.png HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2019 09:10:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2019 09:10:59] "GET /maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 09:10:59] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 09:11:00] "GET /img/favicon.png HTTP/1.1" 200 -
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "run.py", line 4, in <module>
+    app.run(debug=True, port=8000)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 944, in run
+    run_simple(host, port, self, **options)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 987, in run_simple
+    s.bind(server_address)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+127.0.0.1 - - [31/Aug/2019 09:39:03] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2019 09:39:03] "GET /maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 09:39:03] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 09:39:04] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 09:39:05] "GET /img/favicon.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/Flask/Flask/app/views/main.py', reloading
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 223-715-563
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "run.py", line 4, in <module>
+    app.run(debug=True, port=8000)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 944, in run
+    run_simple(host, port, self, **options)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 987, in run_simple
+    s.bind(server_address)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "run.py", line 4, in <module>
+    app.run(debug=True, port=8000)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 944, in run
+    run_simple(host, port, self, **options)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 987, in run_simple
+    s.bind(server_address)
+  File "/usr/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 223-715-563
+127.0.0.1 - - [31/Aug/2019 11:37:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2019 11:37:16] "GET /maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 11:37:16] "GET /maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 11:37:16] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 11:37:17] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 11:37:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2019 11:37:28] "GET /maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 11:37:28] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 11:37:29] "GET /img/favicon.png HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2019 11:44:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2019 11:44:17] "GET /maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 11:44:18] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 11:44:18] "GET /img/favicon.png HTTP/1.1" 200 -
