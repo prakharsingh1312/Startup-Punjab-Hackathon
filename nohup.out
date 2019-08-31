@@ -1,0 +1,14 @@
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 223-715-563
+127.0.0.1 - - [31/Aug/2019 07:06:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [31/Aug/2019 07:06:23] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 07:06:23] "GET /maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 07:06:23] "GET /cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js HTTP/1.1" 404 -
+127.0.0.1 - - [31/Aug/2019 07:06:24] "GET /img/favicon.png HTTP/1.1" 200 -
