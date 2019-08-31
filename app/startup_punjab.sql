@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 31, 2019 at 04:36 PM
+-- Generation Time: Aug 31, 2019 at 09:29 PM
 -- Server version: 5.7.27-0ubuntu0.18.04.1
 -- PHP Version: 7.2.19-0ubuntu0.18.04.2
 
@@ -1018,20 +1018,28 @@ INSERT INTO `stage` (`id`, `name`) VALUES
 
 CREATE TABLE `startups` (
   `id` int(11) NOT NULL,
-  `logo` varchar(30) NOT NULL,
-  `name` mediumtext NOT NULL,
-  `brief` longtext NOT NULL,
-  `stage_id` int(11) NOT NULL,
-  `c_id` int(11) NOT NULL,
-  `funded` int(11) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `mobile` int(11) NOT NULL,
-  `website` varchar(30) NOT NULL,
-  `app_link` varchar(30) NOT NULL,
-  `i_id` int(11) NOT NULL,
-  `sec_id` int(11) NOT NULL
+  `logo` varchar(30) DEFAULT NULL,
+  `name` mediumtext,
+  `brief` longtext,
+  `stage_id` int(11) DEFAULT NULL,
+  `c_id` int(11) DEFAULT NULL,
+  `funded` int(11) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `mobile` int(11) DEFAULT NULL,
+  `website` varchar(30) DEFAULT NULL,
+  `app_link` varchar(30) DEFAULT NULL,
+  `i_id` int(11) DEFAULT NULL,
+  `sec_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `startups`
+--
+
+INSERT INTO `startups` (`id`, `logo`, `name`, `brief`, `stage_id`, `c_id`, `funded`, `email`, `password`, `mobile`, `website`, `app_link`, `i_id`, `sec_id`) VALUES
+(1, NULL, 'Divya Prakash Mittal', NULL, NULL, NULL, NULL, 'divyaprakashmittal@gmail.com', '$2b$08$QLFgY.J.bNJ5Tz4vYqVVm.cX.NGtvPBoAVrE7vWEvaHB5XEowsaji', NULL, NULL, NULL, NULL, NULL),
+(2, NULL, 'Pulkit', NULL, NULL, NULL, NULL, 'dmittal_be17@thapar.edu', '$2b$08$4KN09hOSM.4vrSzP.vZb3OJgqN69zbcMGowShw.H5Ir2lsArhrlGq', NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -1128,7 +1136,7 @@ ALTER TABLE `stage`
 -- AUTO_INCREMENT for table `startups`
 --
 ALTER TABLE `startups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --

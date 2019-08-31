@@ -18,6 +18,10 @@ main = Blueprint('main', __name__)
 @main.route('/')
 @login_required
 def index():
+    query = query_db("SELECT brief FROM startups where email=%s", (session["email"], ))[0][0]
+    visible = False
+    if query is None:
+        visible  = True
     return render_template("dashboard.html", **locals())
 
 @main.route('/register', methods=["GET", "POST"])
@@ -57,6 +61,7 @@ def login():
         else:
             if bcrypt.verify(password, query[0][1]):
                 session["name"] = query[0][0]
+                session["email"] = email
                 flash("Logged In Successfully", "success")
                 return redirect(url_for('main.index'))
             else:

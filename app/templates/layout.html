@@ -236,6 +236,29 @@
         });
     </script>
 
+		<script type="text/javascript">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        function flashMessages() {
+          {% for category, message in messages %}
+          $.notify({
+            icon: "ti-bell",
+            message: '{{ message }}'
+          },{
+            type: '{{ category }}',
+            timer: 4000,
+            placement: {
+              from: "top",
+              align: "center"
+          }
+          });
+          {% endfor %}
+        }
+            window.onload = flashMessages;
+            {% endif %}
+        {% endwith %}
+    </script>
+
 </body>
 
 </html>
