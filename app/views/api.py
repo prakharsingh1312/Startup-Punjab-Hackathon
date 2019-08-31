@@ -18,7 +18,7 @@ def login():
         password = request.json["password"]
         query = query_db("SELECT password FROM startups where email=%s", (email, ))
         if query is None:
-            return jsonify(status=False)
+            return jsonify(status=query)
         else:
             if bcrypt.verify(password, query[0][0]):
                 return jsonify(status=True)
