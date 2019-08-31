@@ -122,11 +122,11 @@ hi
                     </div>
                     <div class="row  col-md-12">
                         <label class="col-sm-2 label-on-left">Industry</label>
-                          <div class="col-lg-5 col-md-6 col-sm-3">
-                                              <select class="selectpicker" data-style="select-with-transition"  name="city" data-size="{{ cities|length }}">
-                              {% for city in cities %}
-                                <option value="{{ city[0] }}"> {{ city[1] }} </option>
-                              {% endfor %}
+                          <div class="col-lg-5 col-md-6 col-sm-3" id="ind_sec">
+                            <select  class="selectpicker" data-style="select-with-transition"  name="city" data-size="{{ cities|length }}">
+                                    <option value="select">Select Sector</option>
+                              
+                                
                                               </select>
                                           </div>
                       
