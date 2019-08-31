@@ -10,13 +10,64 @@ from flask import (Blueprint, Flask, flash, g, redirect, render_template,
 from flask_mysqldb import MySQL
 from flask_session import Session
 import csv
-# from passlib.hash import sha256_crypt as sha
+from passlib.hash import bcrypt
 
 main = Blueprint('main', __name__)
 
+
 @main.route('/')
+@login_required
 def index():
     return render_template("dashboard.html", **locals())
+
+@main.route('/register', methods=["GET", "POST"])
+def register():
+    if request.method=="POST":
+        if request.form.get("optionsCheckboxes"):
+            name = request.form["name"]
+            email = request.form["email"]
+            password = request.form["password"]
+            conf_pass = request.form["conf_pass"]
+            if password==conf_pass:
+                if query_db("SELECT * FROM startups where email=%s", (email, )) is None:
+                    password =  bcrypt.using(rounds=8).hash(password)
+                    execute_db("INSERT INTO startups(name, email, password) values(%s, %s, %s);",(
+                        name,
+                        email,
+                        password,
+                    ))
+                    flash("Registered Successfully", "success")
+                else:
+                    flash("Email Already Registered", "danger")
+            else:
+                flash("Passwords Dont Match!", "danger")
+        else:
+            flash("Please accept Terms \& Conditions!", "danger")
+        return redirect(url_for('main.register'))
+    return render_template("register.html", **locals())
+
+@main.route('/login', methods=["GET", "POST"])
+def login():
+    if request.method=="POST":
+        email = request.form["email"]
+        password = request.form["password"]
+        query = query_db("SELECT name, password FROM startups where email=%s", (email, ))
+        if query is None:
+            flash("Email Is not Registered", "danger")
+        else:
+            if bcrypt.verify(password, query[0][1]):
+                session["name"] = query[0][0]
+                flash("Logged In Successfully", "success")
+                return redirect(url_for('main.index'))
+            else:
+                flash("Password Incorrect!", "danger")
+        return redirect(url_for('main.login'))
+    return render_template("login.html", **locals())
+
+@main.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for("main.login"))
 
 @main.route('/populate')
 def populate():

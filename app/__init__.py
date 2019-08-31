@@ -38,8 +38,8 @@ def query_db(query,args=(),one=False):
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if session.get("lib_id") is None:
-            return redirect(url_for("main.index", next=request.url))
+        if session.get("name") is None:
+            return redirect(url_for("main.login", next=request.url))
         return f(*args, **kwargs)
     return decorated_function
 
