@@ -15,22 +15,48 @@ from passlib.hash import bcrypt
 main = Blueprint('main', __name__)
 
 
-@main.route('/')
+@main.route('/', methods=["GET","POST"])
 @login_required
 def index():
-    query = query_db("SELECT brief FROM startups where email=%s", (session["email"], ))[0][0]
-    cities = query_db("SELECT * from city")
-    industries = query_db("SELECT * FROM industry")
-    sectors = query_db("SELECT * FROM sector")
-    industries_sectors = query_db("SELECT * FROM industry_sector")
-    services = query_db("SELECT * FROM services")
+    if request.method=="GET":
+        query = query_db("SELECT brief FROM startups where email=%s", (session["email"], ))[0][0]
+        cities = query_db("SELECT * from city")
+        industries = query_db("SELECT * FROM industry")
+        sectors = query_db("SELECT * FROM sector")
+        industries_sectors = query_db("SELECT * FROM industry_sector")
+        services = query_db("SELECT * FROM services")
 
-    #print(industries_sector)
+        #print(industries_sector)
 
-    visible = False
-    if query is None:
-        visible  = True
-    return render_template("dashboard.html", **locals())
+        visible = False
+        if query is None:
+            visible  = True
+        return render_template("dashboard.html", **locals())
+    else:
+        phone = request.form["phone"]
+        city = request.form["city"]
+        status = request.form["status"]
+        brief = request.form["brief"]
+        website = request.form["website"]
+        app = request.form["app"]
+        #stage = request.form["stage"]
+        #sector = request.form["sector"]
+        #industry = request.form["industry"]
+        services = request.form["services"]
+
+        print(phone)
+        print(city)
+        print(status)
+        print(brief)
+        print(website)
+        print(app)
+        #print(stage)
+        #print(sector)
+        #print(industry)
+        print(services)
+
+        return render_template("dashboard.html", **locals())
+
 
 @main.route('/drop', methods=["GET", "POST"])
 def menu():
