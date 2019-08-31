@@ -108,6 +108,40 @@ hi
                         </div>
                     </div>
 
+                <div class="col-md-12"  style="margin-top: 50px; margin-bottom: 50px">
+                <legend>Startup Category</legend>
+                <div class="row col-md-12">
+                    <label class="col-sm-2 label-on-left">Sector</label>
+                        <div class="col-lg-5 col-md-6 col-sm-3">
+                                            <select class="selectpicker" data-style="select-with-transition"  name="city" data-size="{{ cities|length }}">
+                            {% for industry in industries %}
+                            <option value="{{ industry[0] }}"> {{ industry[1] }} </option>
+                            {% endfor %}
+                                            </select>
+                                        </div>
+                    </div>
+                    <div class="row  col-md-12">
+                        <label class="col-sm-2 label-on-left">Industry</label>
+                          <div class="col-lg-5 col-md-6 col-sm-3">
+                                              <select class="selectpicker" data-style="select-with-transition"  name="city" data-size="{{ cities|length }}">
+                              {% for city in cities %}
+                                <option value="{{ city[0] }}"> {{ city[1] }} </option>
+                              {% endfor %}
+                                              </select>
+                                          </div>
+                      
+                          <div class="row  col-md-12">
+                                <label class="col-sm-2 label-on-left">Services</label>
+                                  <div class="col-lg-5 col-md-6 col-sm-3">
+                                                      <select class="selectpicker" data-style="select-with-transition"  name="city" data-size="{{ cities|length }}">
+                                      {% for service in services %}
+                                        <option value="{{ service[0] }}"> {{ service[1] }} </option>
+                                      {% endfor %}
+                                                      </select>
+                                                  </div>
+                              </div>
+                        </div>
+            </div>  
 
 
                 </div>
