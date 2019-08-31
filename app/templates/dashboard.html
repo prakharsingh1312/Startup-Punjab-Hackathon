@@ -8,111 +8,112 @@ hi
 {% block content%}
 
 <div class="col-md-12">
-
-  {% if visible %}
-    <div class="card">
-        <form method="get" action="/" class="form-horizontal">
-            <div class="card-header card-header-text" data-background-color="rose">
-                <h4 class="card-title">Information</h4>
-            </div>
-            <div class="card-content">
-                <div class="row">
-                    <label class="col-sm-2 label-on-left">Phone Number</label>
-
-                    <div class="col-sm-10">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" class="form-control" value="" placeholder="Enter your phone number">
-                            <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
-                        <span class="material-input"></span></div>
-                    </div>
+  {% if session["name"] %}
+      {% if visible %}
+        <div class="card">
+            <form method="get" action="/" class="form-horizontal">
+                <div class="card-header card-header-text" data-background-color="rose">
+                    <h4 class="card-title">Information</h4>
                 </div>
+                <div class="card-content">
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Phone Number</label>
 
-                <div class="row">
-                  <label class="col-sm-2 label-on-left">City</label>
-                    <div class="col-lg-5 col-md-6 col-sm-3">
-    									<select class="selectpicker" data-style="select-with-transition"  name="city" data-size="{{ cities|length }}">
-                        {% for city in cities %}
-                          <option value="{{ city[0] }}"> {{ city[1] }} </option>
-                        {% endfor %}
-    									</select>
-    								</div>
-                </div>
-
-
-
-                <div class="row">
-                    <label class="col-sm-2 label-on-left">Status of your startup</label>
-                    <div class="col-sm-10 checkbox-radios">
-
-                        <!--
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"></span>
-                                Second Checkbox
-                            </label>
-                        </div>
-                        -->
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" checked="true"><span class="circle"></span>
-                                Funded
-                            </label>
-                        </div>
-
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios"><span class="circle"></span>
-                                Bootstrapped
-                            </label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" value="" placeholder="Enter your phone number">
+                                <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
+                            <span class="material-input"></span></div>
                         </div>
                     </div>
-                </div>
 
-
-                <div class="row">
-                    <label class="col-sm-2 label-on-left">Brief</label>
-
-                    <div class="col-sm-10">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <textarea type="text" class="form-control" name="brief" rows="5" placeholder="Describe Your Startup"> </textarea>
-                            <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
-                        <span class="material-input"></span></div>
+                    <div class="row">
+                      <label class="col-sm-2 label-on-left">City</label>
+                        <div class="col-lg-5 col-md-6 col-sm-3">
+        									<select class="selectpicker" data-style="select-with-transition"  name="city" data-size="{{ cities|length }}">
+                            {% for city in cities %}
+                              <option value="{{ city[0] }}"> {{ city[1] }} </option>
+                            {% endfor %}
+        									</select>
+        								</div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <label class="col-sm-2 label-on-left">Website</label>
 
-                    <div class="col-sm-10">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" class="form-control" value="" placeholder="Website of Your Startup">
-                            <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
-                        <span class="material-input"></span></div>
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Status of your startup</label>
+                        <div class="col-sm-10 checkbox-radios">
+
+                            <!--
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"></span>
+                                    Second Checkbox
+                                </label>
+                            </div>
+                            -->
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" checked="true"><span class="circle"></span>
+                                    Funded
+                                </label>
+                            </div>
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios"><span class="circle"></span>
+                                    Bootstrapped
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
 
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Brief</label>
 
-                <div class="row">
-                    <label class="col-sm-2 label-on-left">Mobile App Link</label>
-
-                    <div class="col-sm-10">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" class="form-control" value="" placeholder="App Link (if any)">
-                            <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
-                        <span class="material-input"></span></div>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <textarea type="text" class="form-control" name="brief" rows="5" placeholder="Describe Your Startup"> </textarea>
+                                <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
+                            <span class="material-input"></span></div>
+                        </div>
                     </div>
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Website</label>
+
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" value="" placeholder="Website of Your Startup">
+                                <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
+                            <span class="material-input"></span></div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Mobile App Link</label>
+
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="text" class="form-control" value="" placeholder="App Link (if any)">
+                                <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
+                            <span class="material-input"></span></div>
+                        </div>
+                    </div>
+
+
+
                 </div>
-
-
-
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
     {% endif %}
+  {% endif %}
 </div>
 {% endblock %}
