@@ -44,7 +44,11 @@
             <div class="logo">
                 <a class="simple-text logo-normal">
 									&nbsp;&nbsp;&nbsp;&nbsp;
+									{% if session["name"] %}
                      {{ session["name"] }}
+									{% else %}
+										Admin
+									{% endif %}
                 </a>
             </div>
 
@@ -57,6 +61,14 @@
                             <p> Dashboard </p>
                         </a>
                     </li>
+										{% if session["admin"] %}
+												<li class="">
+														<a href="{{ url_for('admin.add_announment') }}">
+																<i class="material-icons">queue</i>
+																<p> Add Announcement </p>
+														</a>
+												</li>
+										{% endif %}
 
                 </ul>
             </div>
@@ -88,18 +100,16 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="material-icons">notifications</i>
-                                <span class="notification">5</span>
+                                <span class="notification">{{ announcements|length }}</span>
                                 <p class="hidden-lg hidden-md">
                                     Notifications
                                     <b class="caret"></b>
                                 </p>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Mike John responded to your email</a></li>
-                                <li><a href="#">You have 5 new tasks</a></li>
-                                <li><a href="#">You're now friend with Andrew</a></li>
-                                <li><a href="#">Another Notification</a></li>
-                                <li><a href="#">Another One</a></li>
+																{% for announcement in announcements %}
+	                                <li><a> {{announcement[1]}} - {{ announcement[2] }}</a></li>
+																{% endfor %}
                             </ul>
                         </li>
 

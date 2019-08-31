@@ -14,10 +14,10 @@ from passlib.hash import bcrypt
 
 main = Blueprint('main', __name__)
 
-
 @main.route('/')
 @login_required
 def index():
+    announcements = query_db("SELECT * FROM announcements")
     query = query_db("SELECT brief FROM startups where email=%s", (session["email"], ))[0][0]
     cities = query_db("SELECT * from city")
     industries = query_db("SELECT * FROM industry")
