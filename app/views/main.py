@@ -6,7 +6,7 @@ from tempfile import mkdtemp
 from flask_mail import Mail, Message
 from app import *
 from flask import (Blueprint, Flask, flash, g, redirect, render_template,
-                   request, send_file, session, url_for)
+                   request, send_file, session, url_for, jsonify)
 from flask_mysqldb import MySQL
 from flask_session import Session
 import csv
@@ -22,7 +22,7 @@ def index():
     cities = query_db("SELECT * from city")
     industries = query_db("SELECT * FROM industry")
     sectors = query_db("SELECT * FROM sector")
-    industries_sector = query_db("SELECT * FROM industry_sector")
+    industries_sectors = query_db("SELECT * FROM industry_sector")
     services = query_db("SELECT * FROM services")
 
     #print(industries_sector)
@@ -31,6 +31,34 @@ def index():
     if query is None:
         visible  = True
     return render_template("dashboard.html", **locals())
+
+@main.route('/drop', methods=["GET", "POST"])
+def menu():
+    if request.method=="POST":
+        industries = query_db("SELECT * FROM industry")
+        sectors = query_db("SELECT * FROM sector")
+        industries_sectors = query_db("SELECT * FROM industry_sector")
+        selected_value = request.form["selectedValue"]
+
+        ret_sec = ""
+
+        print(selected_value)
+
+        for data in industries_sectors:
+            print(data[0])
+            if int(data[0]) == int(selected_value):
+                #print(data[0])
+                #ret_sec.append(sectors[data[1]][0])
+                ret_sec=ret_sec+str(sectors[data[1]-1][1])+","
+        print(ret_sec)
+        #ret_sec = jsonify(ret_sec)
+
+        ret_sec = str(ret_sec)
+
+
+        print(ret_sec)
+        return ret_sec
+
 
 @main.route('/register', methods=["GET", "POST"])
 def register():
@@ -70,6 +98,7 @@ def login():
             if bcrypt.verify(password, query[0][1]):
                 session["name"] = query[0][0]
                 session["email"] = email
+
                 flash("Logged In Successfully", "success")
                 return redirect(url_for('main.index'))
             else:
