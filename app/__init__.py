@@ -74,7 +74,9 @@ def send_mail(title,sender,recipients,message_html):
 # Importing Blueprints
 from app.views.main import main
 from app.views.admin import admin
+from app.views.api import api
 # Registering Blueprints
 
 app.register_blueprint(main)
 app.register_blueprint(admin)
+app.register_blueprint(api)
