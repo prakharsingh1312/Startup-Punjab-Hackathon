@@ -20,6 +20,13 @@ main = Blueprint('main', __name__)
 def index():
     query = query_db("SELECT brief FROM startups where email=%s", (session["email"], ))[0][0]
     cities = query_db("SELECT * from city")
+    industries = query_db("SELECT * FROM industry")
+    sectors = query_db("SELECT * FROM sector")
+    industries_sector = query_db("SELECT * FROM industry_sector")
+    services = query_db("SELECT * FROM services")
+
+    #print(industries_sector)
+
     visible = False
     if query is None:
         visible  = True
