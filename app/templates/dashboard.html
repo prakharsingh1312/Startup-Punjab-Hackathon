@@ -144,7 +144,7 @@ hi
                 <div class="row col-md-12">
                     <label class="col-sm-2 label-on-left">Industry</label>
                         <div class="col-lg-5 col-md-6 col-sm-3">
-                                            <select class="selectpicker" data-style="select-with-transition"  name="industry" data-size="{{ cities|length }}">
+                                            <select class="selectpicker" id="sel_pic" data-style="select-with-transition"  name="industry" data-size="{{ cities|length }}">
                             {% for industry in industries %}
                             <option value="{{ industry[0] }}"> {{ industry[1] }} </option>
                             {% endfor %}
