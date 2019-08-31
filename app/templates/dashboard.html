@@ -29,15 +29,14 @@ hi
                 </div>
 
                 <div class="row">
-                    <label class="col-sm-2 label-on-left">City</label>
-
-                    <div class="col-sm-10">
-                        <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <input type="text" class="form-control" value="" placeholder="Enter the location of your startup">
-                            <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
-                        <span class="material-input"></span></div>
-                    </div>
+                  <label class="col-sm-2 label-on-left">City</label>
+                    <div class="col-lg-5 col-md-6 col-sm-3">
+    									<select class="selectpicker" data-style="select-with-transition"  name="city" data-size="{{ cities|length }}">
+                        {% for city in cities %}
+                          <option value="{{ city[0] }}"> {{ city[1] }} </option>
+                        {% endfor %}
+    									</select>
+    								</div>
                 </div>
 
 
@@ -77,7 +76,7 @@ hi
                     <div class="col-sm-10">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <input type="text" class="form-control" value="" placeholder="Enter the location of your startup">
+                            <textarea type="text" class="form-control" name="brief" rows="5" placeholder="Describe Your Startup"> </textarea>
                             <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
                         <span class="material-input"></span></div>
                     </div>
@@ -89,7 +88,7 @@ hi
                     <div class="col-sm-10">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <input type="text" class="form-control" value="" placeholder="Enter the website of your startup">
+                            <input type="text" class="form-control" value="" placeholder="Website of Your Startup">
                             <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
                         <span class="material-input"></span></div>
                     </div>
@@ -103,7 +102,7 @@ hi
                     <div class="col-sm-10">
                         <div class="form-group label-floating is-empty">
                             <label class="control-label"></label>
-                            <input type="text" class="form-control" value="" placeholder="Enter the link of your app">
+                            <input type="text" class="form-control" value="" placeholder="App Link (if any)">
                             <!--<span class="help-block">A block of help text that breaks onto a new line.</span>-->
                         <span class="material-input"></span></div>
                     </div>

@@ -19,6 +19,7 @@ main = Blueprint('main', __name__)
 @login_required
 def index():
     query = query_db("SELECT brief FROM startups where email=%s", (session["email"], ))[0][0]
+    cities = query_db("SELECT * from city")
     visible = False
     if query is None:
         visible  = True
