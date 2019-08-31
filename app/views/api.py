@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request, render_template, flash, redirect, url_for, session, send_file
-from flask import Blueprint, g
+from flask import Blueprint, g, jsonify
 from flask_mysqldb import MySQL
 from passlib.hash import bcrypt
 from flask_session import Session
