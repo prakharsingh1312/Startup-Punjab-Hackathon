@@ -1,4 +1,4 @@
-<html>
+ <html>
 <head>
 	<meta charset="utf-8" />
 	<link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png" />
@@ -68,7 +68,13 @@
 														</a>
 												</li>
 										{% endif %}
-
+                    
+                                        <li class="active">
+                                            <a href="{{ url_for('main.edit_info') }}">
+                                                <i class="material-icons">dashboard</i>
+                                                <p> Edit Info</p>
+                                            </a>
+                                        </li>
                 </ul>
             </div>
         </div>
@@ -111,6 +117,12 @@
 																{% endfor %}
                             </ul>
                         </li>
+                        <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">dashboard</i>
+                                    <p class="hidden-lg hidden-md">Dashboard</p>
+                                </a>
+                            </li>
 
 												<li class="dropdown">
 														<a href="#" class="dropdown-toggle" data-toggle="dropdown">

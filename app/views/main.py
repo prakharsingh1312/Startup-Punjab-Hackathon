@@ -54,8 +54,45 @@ def index():
         #print(industry)
         print(services)
 
+        execute_db("insert into startups (phone, city, status, brief, website, app) values (%s, %s, %s, %s, %s, %s, %s);",(
+            mobile,
+            c_id,
+            sec_id,
+            brief,
+            website,
+            app_link,
+        ))
+
         return render_template("dashboard.html", **locals())
 
+
+@main.route('/edit_info', methods=["GET", "POST"])
+@login_required
+def edit_info():
+    if request.method=="POST":
+        phone = request.form["phone"]
+        city = request.form["city"]
+        status = request.form["status"]
+        brief = request.form["brief"]
+        website = request.form["website"]
+        app = request.form["app"]
+        #stage = request.form["stage"]
+        #sector = request.form["sector"]
+        #industry = request.form["industry"]
+        services = request.form["services"]
+
+        execute_db("insert into startups (phone, city, status, brief, website, app) values (%s, %s, %s, %s, %s, %s, %s);",(
+            mobile,
+            c_id,
+            sec_id,
+            brief,
+            website,
+            app_link,
+        ))
+
+        return redirect(url_for('main.index'))
+    else:
+        return redirect(url_for('main.index'))
 
 @main.route('/drop', methods=["GET", "POST"])
 def menu():
