@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 31, 2019 at 10:35 PM
+-- Generation Time: Sep 01, 2019 at 08:11 AM
 -- Server version: 5.7.27-0ubuntu0.18.04.1
 -- PHP Version: 7.2.19-0ubuntu0.18.04.2
 
@@ -50,6 +50,16 @@ CREATE TABLE `announcements` (
   `title` longtext NOT NULL,
   `content` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `announcements`
+--
+
+INSERT INTO `announcements` (`id`, `title`, `content`) VALUES
+(1, 'ksjomxpom', 'nmpojdpojcpom'),
+(2, 'asnin', 'ininpoijpom '),
+(3, 'Info', 'As of now, the bootstrapped platform process over 100 Mn retail data points a month across different verticals.\r\n\r\nIn 2018, the startup also made it to the second cohort of the SaaS accelerator, Uppekha, which helped it increase its ARR by 4X, ARPU by 67% and revenue churn of -16%.\r\n\r\nThe startup is soon going to available on Shopify and has signed a technology partnership with an enterprise ecommerce platform. It has also applied for a patent for one of its products which is currently in private beta.\r\n\r\nWhile in 2018, its revenue split was India (80%) and North America (20%), the founders would like to see the revenue split at the end of 2019 as India (40%) and North America (60%). In India, it is currently working with brands like Candere by Kalyan Jewelers, Ritu Kumar, William Penn, Apollo Pharmacy to name a few.'),
+(4, 'Important', 'In order to maintain variety and freshness of thoughts, the company work with freelancers from different regions, for not more than 20 designs with each. In 2018, it adopted a quick fashion strategy, wherein they launched 5-10 new products every 2 months and once sold out, its off the market.\r\n\r\n');
 
 -- --------------------------------------------------------
 
@@ -1058,7 +1068,15 @@ CREATE TABLE `startups` (
 
 INSERT INTO `startups` (`id`, `logo`, `name`, `brief`, `stage_id`, `c_id`, `funded`, `email`, `password`, `mobile`, `website`, `app_link`, `i_id`, `sec_id`) VALUES
 (1, NULL, 'Divya Prakash Mittal', NULL, NULL, NULL, NULL, 'divyaprakashmittal@gmail.com', '$2b$08$QLFgY.J.bNJ5Tz4vYqVVm.cX.NGtvPBoAVrE7vWEvaHB5XEowsaji', NULL, NULL, NULL, NULL, NULL),
-(2, NULL, 'Pulkit', NULL, NULL, NULL, NULL, 'dmittal_be17@thapar.edu', '$2b$08$4KN09hOSM.4vrSzP.vZb3OJgqN69zbcMGowShw.H5Ir2lsArhrlGq', NULL, NULL, NULL, NULL, NULL);
+(2, NULL, 'Pulkit', NULL, NULL, NULL, NULL, 'dmittal_be17@thapar.edu', '$2b$08$4KN09hOSM.4vrSzP.vZb3OJgqN69zbcMGowShw.H5Ir2lsArhrlGq', NULL, NULL, NULL, NULL, NULL),
+(3, NULL, 'GrabOn', 'GrabOn hopes to establish itself as an irreplaceable shopping companion for every Indian shopper in the next five years. The company is currently operating in multiple verticals including deals and coupons (GrabOn), price comparison (BestPriceOn) and gift cards.\r\n\r\nAs claimed by the company, it became profitable within 15 months of its launch. It currently boasts of 4000+ brand associations and 60+ strategic alliances and claims to surge ahead of its competition, beating them by an average of 35% in terms of monthly visitors.\r\n\r\nIt is now tapping the growth opportunities in Tier 2 and Tier 3 cities and targets to win over 40% of the gift cards space by 2020.\r\n\r\n', 2, 21, 0, 'contact@grabon.in', 'qwerty', 987654321, 'grabon.in', NULL, 32, NULL),
+(4, NULL, 'GExpress', 'Gxpress aims to provide customised service solutions for international logistics and ecommerce sellers in India. On one hand it, enables businesses in selling products on online platforms such as Amazon and eBay, on the other, it allows Indian exporters, wholesalers, and manufacturers to sell their products globally via its logistics network.\r\n\r\nThe company achieved a revenue of INR 7 Cr in the first financial year and looks to double its revenue to INR 15 Cr by end of FY18. The company also has plans to expand its services further in India and internationally to locations like China, UK, USA, Dubai, Germany, Australia and the USA.\r\n\r\nThe company also plans to target manufacturers and artisans, whose business volumes will grow in the future.', 2, 216, 0, 'contact@gexpress.in', 'qwerty', 874584125, 'gexpress.in', NULL, 10, 1),
+(5, NULL, 'Happy Fox', 'HappyFox is a multilingual help desk ticketing system supporting multiple customer support channels. It converts email, phone, web and chat requests into tickets and keep them organised.\r\n\r\nIt is currently rendering its services in 35 languages including English, Deutsche, Arabic, Portuguese, Dutch, Russian, Czech, Swedish, Turkish, Bulgarian, Norwegian, and Hindi.\r\n\r\nThe platform is used by thousands of companies of all sizes spread across diverse sectors such as — education, government, media, manufacturing among others. As mentioned on the company’s website, it serves over 12,000 companies spread across 70+ countries. This includes brands like Lowe’s, LeapFrog, Whirlpool, Kindling among others.\r\n\r\n', 3, 200, 1, 'contact@happyfox.in', 'qwerty', 574852145, 'happyfox.in', NULL, 26, 1),
+(6, NULL, 'InterviewBit', 'InterviewBit offers a platform for free interview preparation. It gathers data about the users’ coding skills, their previous projects, and other technical attributes from sites like Stack Overflow and GitHub. This data is used to match the best candidates to a given job.\r\n\r\nPost that, they behave like a tech-assisted recruitment agency. The self-funded startup also sources pre-screened technical talent for coveted employers such as Facebook, Amazon, Uber and Google. In 2018, the company partnered with 500+ tech employers in India to help them find the best tech talent and also helped drive the entire campus hiring for companies like Uber, Toppr, Saavn, and Credit Suisse. The four key products of the company include — InterviewBit Hire, Campus Hiring,  Assessments and Code Collab.\r\n\r\nGoing forward, the startup aims to train and support placement of at least 25,000 students graduating in 2019 with a package of about INR 10 Lakhs Per Annum.', 4, 150, 0, 'contact@interviewbit.com', 'qwerty', 874596215, 'interviewbit.com', NULL, 17, 1),
+(7, NULL, 'Mudraka', 'Mudraka was initially started as a marketplace for outdoor advertising, display and signage products with vendors across India.\r\n\r\nHowever, in order to address issues concerning quality control, consistency, service levels, packaging, etc, the founders had to internalise a number of processes. They then shifted from the marketplace model to the inventory model.\r\n\r\nScaling impressively year-on-year, clocking in 7X revenue in FY18 as compared to the previous financial year, Mudraka aims to grow its partner base besides generating ten times more indirect employment by 2021.\r\n\r\nIt counts brands like Google, Zoomcar, Muthoot, 1mg, Apollo Tyres, and Modi Pharma as well as FICCI among others as its clients. The founders aim to resolve some of the issues such as opaque pricing, and non-standardised products in this so far unorganised industry.\r\n\r\n', 1, 147, 0, 'contact@mudraka.com', 'qwerty', 748596321, 'mudraka.com', NULL, 14, 1),
+(8, NULL, 'Quack Quack', 'For QuackQuack founder Ravi Mittal, the idea was simple. To solve the ‘dating’ problem of the singles. As he said in an earlier interaction with Inc42, “We aim to solve the problem for singles, help them find a date, make money in the process, and grow. It was never about raising funds or creating valuation.”\r\n\r\nThe startup claims it has 4 Mn users (as of January 2019) with 1.5 Mn users added in 2018 alone. The app has over 800K downloads, and has witnessed over 64 Mn message exchanges by 2.05 Mn mutual matches.\r\n\r\nIn 2019, the company plans to double its per day user count to 9,000. The startup is in the midst of launching an independent app focused on live one-to-one stranger video chat which is stealth mode right now. Going forward, the bootstrapped startup also has plans launching the app in 10 international languages.\r\n\r\n', 3, 199, 1, 'quack@quack.com', 'qwerty', 578426897, 'quack.com', NULL, 16, 1),
+(9, NULL, 'ReferralYogi', 'ReferralYogi offers reputation management software to help local businesses identify their promoters, encourage referrals, manage references and create a buzz around their brands.\r\n\r\nIt enables businesses to send review invitations to customers via email and SMS; ask for reviews manually; schedule them or auto-trigger at the time of check-out; manage Google, Facebook and NPS reviews across all locations from a single dashboard; monitor reviews, get notified and respond to them.\r\n\r\nGoing ahead, the bootstrapped startup is looking to enter the U.S. SMB market and hit an ARR of $200K by Dec 2019.', 1, 20, 0, 'contact@ryogi.com', 'qwerty', 457826954, 'ryogi.com', NULL, 7, 1),
+(10, NULL, 'Social Pilot', 'SocialPilot is solving the problem of managing multiple social media profiles efficiently. It provides seamless management of publishing, analytics and conversations for all social channels at one place.\r\n\r\nIn 2018, SocialPilot’s MRR (monthly recurring revenue) grew by 90% while the customer base grew by 22% in comparison to previous year. From a team perspective, it grew from 16 members to 30 members distributed across the US and India. It also launched a few capabilities to enhance collaboration between teams and manage publishing, engagement, and analytics for major social networks.\r\n\r\nThese included Social Inbox, White Labeled Reports, Dropbox Integration to access stored media directly from Dropbox, Google My Business Integration for listings right from SocialPilot and more.\r\n\r\nAs of January 2019, 80% of its customers are Small/Medium Agencies with team size of 2-20 and SMBs based in the US and EU, 15% are based in APAC and 5% of are based in India. Overall, it has a base of 100K users and is growing at 5%-7% month on a month organically. Going ahead, it aims to grow at least 100% YoY while staying profitable and lean.\r\n\r\n', 2, 20, 0, 'contact@socialpilot@com', 'qwerty', 485987628, 'socialpilot.com', NULL, 16, 1);
 
 --
 -- Indexes for dumped tables
@@ -1136,7 +1154,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `city`
 --
@@ -1166,7 +1184,7 @@ ALTER TABLE `stage`
 -- AUTO_INCREMENT for table `startups`
 --
 ALTER TABLE `startups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Constraints for dumped tables
 --

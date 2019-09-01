@@ -69,7 +69,7 @@
 												</li>
 										{% endif %}
                 </ul>
-								<div id="google_translate_element" style="margin-bottom:0px; text-align:-webkit-center-;"></div>
+								<div id="google_translate_element" style="margin-bottom:0px; text-align:-webkit-center-;"	></div>
 
 <script type="text/javascript">
 function googleTranslateElementInit() {
@@ -264,7 +264,7 @@ function googleTranslateElementInit() {
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#sel_pic").click(function(){
+        $("#sel_pic").live(function(){
             var selectedValue = $(this).children("option:selected").val();
             $.post("/drop",{"selectedValue":selectedValue},function(data){
                     var values= [];
@@ -274,8 +274,7 @@ function googleTranslateElementInit() {
       values.forEach(element => {
         pulkit=pulkit+'<li data-original-index="0"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" ><span class="text">'+element+'</span><span class="material-icons  check-mark"> done </span></a></li>';
       });
-      pulkit=pulkit+'</ul></div><select class="selectpicker" data-style="
-      select-with-transition" name="city" data-size="440" tabindex="-98">';
+      pulkit=pulkit+'</ul></div><select class="selectpicker" data-style="select-with-transition" name="city" data-size="440" tabindex="-98">';
             values.forEach(element => {
         pulkit=pulkit+'<option value="'+element+'">'+element+'</option>';
       });
