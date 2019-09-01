@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 01, 2019 at 08:11 AM
+-- Generation Time: Sep 01, 2019 at 11:00 AM
 -- Server version: 5.7.27-0ubuntu0.18.04.1
 -- PHP Version: 7.2.19-0ubuntu0.18.04.2
 
@@ -1067,7 +1067,7 @@ CREATE TABLE `startups` (
 --
 
 INSERT INTO `startups` (`id`, `logo`, `name`, `brief`, `stage_id`, `c_id`, `funded`, `email`, `password`, `mobile`, `website`, `app_link`, `i_id`, `sec_id`) VALUES
-(1, NULL, 'Divya Prakash Mittal', NULL, NULL, NULL, NULL, 'divyaprakashmittal@gmail.com', '$2b$08$QLFgY.J.bNJ5Tz4vYqVVm.cX.NGtvPBoAVrE7vWEvaHB5XEowsaji', NULL, NULL, NULL, NULL, NULL),
+(1, NULL, 'Divya Prakash Mittal', 'hello there! I\'m Divya.', 2, 150, 0, 'divyaprakashmittal@gmail.com', '$2b$08$QLFgY.J.bNJ5Tz4vYqVVm.cX.NGtvPBoAVrE7vWEvaHB5XEowsaji', 54857456, 'quack.com', NULL, 15, 1),
 (2, NULL, 'Pulkit', NULL, NULL, NULL, NULL, 'dmittal_be17@thapar.edu', '$2b$08$4KN09hOSM.4vrSzP.vZb3OJgqN69zbcMGowShw.H5Ir2lsArhrlGq', NULL, NULL, NULL, NULL, NULL),
 (3, NULL, 'GrabOn', 'GrabOn hopes to establish itself as an irreplaceable shopping companion for every Indian shopper in the next five years. The company is currently operating in multiple verticals including deals and coupons (GrabOn), price comparison (BestPriceOn) and gift cards.\r\n\r\nAs claimed by the company, it became profitable within 15 months of its launch. It currently boasts of 4000+ brand associations and 60+ strategic alliances and claims to surge ahead of its competition, beating them by an average of 35% in terms of monthly visitors.\r\n\r\nIt is now tapping the growth opportunities in Tier 2 and Tier 3 cities and targets to win over 40% of the gift cards space by 2020.\r\n\r\n', 2, 21, 0, 'contact@grabon.in', 'qwerty', 987654321, 'grabon.in', NULL, 32, NULL),
 (4, NULL, 'GExpress', 'Gxpress aims to provide customised service solutions for international logistics and ecommerce sellers in India. On one hand it, enables businesses in selling products on online platforms such as Amazon and eBay, on the other, it allows Indian exporters, wholesalers, and manufacturers to sell their products globally via its logistics network.\r\n\r\nThe company achieved a revenue of INR 7 Cr in the first financial year and looks to double its revenue to INR 15 Cr by end of FY18. The company also has plans to expand its services further in India and internationally to locations like China, UK, USA, Dubai, Germany, Australia and the USA.\r\n\r\nThe company also plans to target manufacturers and artisans, whose business volumes will grow in the future.', 2, 216, 0, 'contact@gexpress.in', 'qwerty', 874584125, 'gexpress.in', NULL, 10, 1),
