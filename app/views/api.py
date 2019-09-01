@@ -29,6 +29,8 @@ def login():
 def notfication():
     if request.method=="POST":
         query = query_db("SELECT * FROM announcements")
+        if query is None:
+            query = []
         notifs = []
         for notif in query:
             notifs.append(dict(id=notif[0], title = notif[1], content = notif[2]))

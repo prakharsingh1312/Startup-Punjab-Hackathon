@@ -17,6 +17,7 @@ main = Blueprint('main', __name__)
 @main.route('/', methods=["GET","POST"])
 @login_required
 def index():
+    announcements = query_db("SELECT * FROM announcements")
     if request.method=="GET":
         query = query_db("SELECT brief FROM startups where email=%s", (session["email"], ))[0][0]
         cities = query_db("SELECT * from city")
@@ -72,6 +73,7 @@ def index():
 @main.route('/edit_info', methods=["GET", "POST"])
 @login_required
 def edit_info():
+    announcements = query_db("SELECT * FROM announcements")
     if request.method=="POST":
         phone = request.form["phone"]
         city = request.form["city"]
@@ -99,6 +101,7 @@ def edit_info():
 
 @main.route('/drop', methods=["GET", "POST"])
 def menu():
+    announcements = query_db("SELECT * FROM announcements")
     if request.method=="POST":
         industries = query_db("SELECT * FROM industry")
         sectors = query_db("SELECT * FROM sector")

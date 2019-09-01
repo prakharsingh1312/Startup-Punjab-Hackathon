@@ -27,7 +27,7 @@
 	<link href="/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -69,6 +69,15 @@
 												</li>
 										{% endif %}
                 </ul>
+								<div id="google_translate_element" style="margin-bottom:0px; text-align:-webkit-center-;"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             </div>
         </div>
 
@@ -95,8 +104,8 @@
                                 <p class="hidden-lg hidden-md">Dashboard</p>
                             </a>
                         </li>
-                        
-                        
+
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="material-icons">notifications</i>
@@ -259,7 +268,7 @@
             var selectedValue = $(this).children("option:selected").val();
             $.post("/drop",{"selectedValue":selectedValue},function(data){
                     var values= [];
-               
+
       values=data.split(',');
       var pulkit='<div class="btn-group bootstrap-select open"><button type="button" class="btn dropdown-toggle select-with-transition" data-toggle="dropdown" role="button" title="'+values[0]+'" aria-expanded="true"><span class="filter-option pull-left">'+values[0]+'</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="true">';
       values.forEach(element => {
@@ -272,8 +281,8 @@
       });
       pulit=pulkit+' </select>'
                 $('#ind_sec').html(pulkit);
-            
-                
+
+
             })
         });
     });
