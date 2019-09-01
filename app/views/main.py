@@ -40,10 +40,10 @@ def index():
         app = request.form["app"]
         #stage = request.form["stage"]
         #sector = request.form["sector"]
-        #industry = request.form["industry"]
+        industry = request.form["industry"]
         services = request.form["services"]
 
-        print(phone)
+        print(int(phone))
         print(city)
         print(status)
         print(brief)
@@ -51,18 +51,21 @@ def index():
         print(app)
         #print(stage)
         #print(sector)
-        #print(industry)
+        print(int(industry))
         print(services)
-
-        execute_db("insert into startups (phone, city, status, brief, website, app) values (%s, %s, %s, %s, %s, %s, %s);",(
-            mobile,
-            c_id,
-            sec_id,
+        print(session["email"])
+        execute_db("update startups set mobile = %d, brief = '%s', website = '%s', app_link = '%s', i_id = %d where email = '%s';",(
+            int(phone),
             brief,
             website,
-            app_link,
+            app,
+            int(industry),
+            session["email"],
+
+
         ))
 
+        print()
         return render_template("dashboard.html", **locals())
 
 
@@ -81,18 +84,18 @@ def edit_info():
         #industry = request.form["industry"]
         services = request.form["services"]
 
-        execute_db("insert into startups (phone, city, status, brief, website, app) values (%s, %s, %s, %s, %s, %s, %s);",(
-            mobile,
-            c_id,
-            sec_id,
+        execute_db("update startups set mobile = %d, brief = '%s', website = '%s', app_link = '%s', i_id = %d where email = '%s';",(
+            int(phone),
             brief,
             website,
-            app_link,
+            app,
+            int(industry),
+            session["email"],
         ))
-
         return redirect(url_for('main.index'))
     else:
-        return redirect(url_for('main.index'))
+        details = query_db("SELECT * from startups where email = '%s'", (session["email"],))
+        return redirect(url_for('main.index'), **locals())
 
 @main.route('/drop', methods=["GET", "POST"])
 def menu():
